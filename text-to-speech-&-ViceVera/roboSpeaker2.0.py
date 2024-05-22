@@ -21,6 +21,16 @@ engine = pyttsx3.init()
 speak = "yes"
 while True:
     speak = input("Enter what you want me to speak: ")
+
+     # voices
+    voices = engine.getProperty('voices')
+    engine.setProperty('voice',voices[1].id)
+    # rate
+    rate = engine.getProperty('rate')
+    engine.setProperty('rate',150)
+    # volume
+    volume = engine.getProperty('volume')
+    engine.setProperty('volume',1)
     
     if speak == "no" or speak=="":
         engine.say("Good By Friend")
